@@ -10,7 +10,7 @@ const DashboardFormPage = () => {
         if (!isMounted.current) {
             isMounted.current = true;
             Aside.update('dashboard');
-            PageTitle.set('Dashboard');
+            PageTitle.set('OnBoard Details');
         }
     }, []);
 

@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from './components/landing/navbar';
 import bled from '../assets/orange&black img.svg';
 import arrow from '../../src/assets/arrow.svg';
 import ulta from '../../src/assets/ulta arrow-PhotoRoom.png-PhotoRoom.svg'
+import { useAccount } from 'wagmi';
+import { useNavigate } from 'react-router-dom';
 const LandingPage = () => {
+    const { address, isConnected } = useAccount();
+    const navigate = useNavigate();
+    useEffect(() => {
+      if (address && isConnected) {
+        navigate("/dashboard");
+      }
+    }, [address, isConnected]);
     return (
         <div>
             <div>

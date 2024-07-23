@@ -6,6 +6,7 @@ import { Avatar, Drawer, Popover } from 'antd';
 import Notifications from '../notifications';
 import { Link } from 'react-router-dom';
 import Aside from './aside';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 const Navbar = () => {
     const { PageTitle, NotificationsPanel, drawer } = useContext(GlobalContext);
 
@@ -21,22 +22,7 @@ const Navbar = () => {
                     </div>
                 </div>
                 <div className='flex mr-7 gap-3 items-center'>
-                    <Popover
-                        placement='bottomRight'
-                        open={NotificationsPanel.visibility}
-                        onClick={() => NotificationsPanel.toggle()}
-                        content={<Notifications />}
-                        trigger='click'
-                    >
-                        <div className='p-2 hover:bg-[#222222] rounded-full cursor-pointer duration-200 ease-in-out'>
-                            <BsFillBellFill />
-                        </div>
-                    </Popover>
-                    <Link className='flex items-center gap-3' to={'/dashboard'}>
-                        <Avatar gap={4} className='cursor-pointer' style={{backgroundColor: '#fe570b'}}>J</Avatar>
-                        <div className=''>9473676414</div>
-                        <AiOutlineCaretDown />
-                    </Link>
+                    <ConnectButton />
                 </div>
             </nav>
             <Drawer closable={false} onClose={() => drawer.remove()} width={'auto'} style={{ margin: "0px 0px 0px 0px", padding: "0px 0px 0px 0px", backgroundColor: "#e5e7eb" }} placement="left" open={drawer.reveal}>

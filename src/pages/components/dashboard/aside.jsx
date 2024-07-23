@@ -27,7 +27,7 @@ const Aside = (props) => {
                             <Link to="/dashboard" className={`hover:bg-[#0d0101] p-2 duration-200 ease-in-out border-l-[3px] border-transparent ${Aside.active == "dashboard" && "aside-active"}`}>
                                 <div className='flex items-center gap-2 ml-2'>
                                     <FaHome />
-                                    Dashboard
+                                    OnBoard Details
                                 </div>
                             </Link>
                             <Link className={`hover:bg-[#0d0101] p-2 duration-200 ease-in-out border-l-[3px] border-transparent ${Aside.active == "reported-cases" && "aside-active"}`} to="/dashboard/reported-cases">
