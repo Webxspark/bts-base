@@ -1,0 +1,34 @@
+.aside-active {
+    border-left: 3px #fe570b solid;
+    font-weight: 600;
+    color: #fe570b
+}
+
+* {
+    -ms-overflow-style: none !important;
+    -webkit-scrollbar: none !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+}
+
+body {
+    background-color: #0d0101;
+}
+
+.ant-tabs-ink-bar {
+    background: #030303 !important;
+}
+
+.ant-tabs-tab-btn {
+    color: #030303 !important;
+    transition: all 0.3s ease-in-out;
+}
+
+.ant-tabs-tab-btn[aria-selected="true"] {
+    color: #030303 !important;
+    font-weight: 600 !important;
+}
+
+.ant-select-selector {
+    background: #222222 !important;
+}
