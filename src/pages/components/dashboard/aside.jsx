@@ -8,10 +8,12 @@ import { TbLogout } from 'react-icons/tb'
 import { Link } from 'react-router-dom';
 import { AiOutlineClose, AiOutlineFileText } from 'react-icons/ai';
 import { GlobalContext } from '../../../context/global-context';
-
+import { useDisconnect } from 'wagmi'
+import { Popconfirm } from 'antd';
 
 const Aside = (props) => {
     const { Aside, drawer } = useContext(GlobalContext);
+    const { disconnect } = useDisconnect()
     return (
         <>
             <div className='my-6 text-white'>
@@ -58,10 +60,18 @@ const Aside = (props) => {
                             Admin
                         </div>
                     </Link>
+                    <Popconfirm
+                        title="Are you sure you want to logout?"
+                        onConfirm={disconnect}
+                        okText="Yes"
+                        cancelText="No"
+                        placement='right'
+                    >
                     <div className='hover:bg-[#0d0101] p-2 duration-200 ease-in-out border-l-[3px] border-transparent cursor-pointer flex items-center gap-2 ml-2'>
                         <TbLogout />
                         Logout
                     </div>
+                    </Popconfirm>
                 </div>
 
             </div>
